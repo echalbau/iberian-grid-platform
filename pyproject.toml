@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grid-platform"
+version = "0.1.0"
+description = "Batch lakehouse for Iberian power system data (REE, ENTSO-E, Open-Meteo)."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11,<3.12"
+# Runtime pins match the Airflow 3.3.2 / Python 3.11 constraints file so the
+# local virtualenv and the Airflow image resolve to the same versions.
+dependencies = [
+    "boto3==1.43.75",
+    "requests==2.34.2",
+    "tenacity==9.1.4",
+]
+
+[project.optional-dependencies]
+spark = [
+    "pyspark==3.5.9",
+]
+dev = [
+    "detect-secrets==1.5.0",
+    "moto[s3]==5.2.3",
+    "pre-commit==4.6.2",
+    "pytest==9.1.1",
+    "responses==0.26.3",
+    "ruff==0.17.0",
+    "sqlfluff==4.4.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+    "integration: needs the local Docker stack (run with `make test-integration`)",
+    "spark: starts a local SparkSession (needs Java)",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning:botocore.*",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests", "airflow/dags", "dashboard"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "C4", "PT", "RUF"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["grid_platform"]
+
+[tool.sqlfluff.core]
+dialect = "duckdb"
+templater = "jinja"
+max_line_length = 100
+exclude_rules = "ST06"
+
+[tool.sqlfluff.templater.jinja]
+apply_dbt_builtins = true
+
+[tool.sqlfluff.rules.capitalisation.keywords]
+capitalisation_policy = "lower"

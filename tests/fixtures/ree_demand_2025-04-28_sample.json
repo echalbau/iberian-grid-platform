@@ -1,0 +1,110 @@
+{
+  "data": {
+    "type": "Demanda nacional en tiempo real",
+    "id": "dem15",
+    "attributes": {
+      "title": "Demanda nacional en tiempo real",
+      "last-update": "2025-12-02T12:13:03.000+01:00",
+      "description": null
+    },
+    "meta": {}
+  },
+  "included": [
+    {
+      "type": "Forecasted",
+      "id": "2052",
+      "groupId": null,
+      "attributes": {
+        "title": "Forecasted",
+        "description": "Forecasted demand",
+        "color": "#41d641",
+        "icon": null,
+        "type": null,
+        "magnitude": null,
+        "composite": false,
+        "last-update": "2025-12-02T12:13:03.000+01:00",
+        "values": [
+          {
+            "value": 23688,
+            "percentage": 0.3343071256192049,
+            "datetime": "2025-04-28T00:00:00.000+02:00"
+          },
+          {
+            "value": 23636,
+            "percentage": 0.3348918926577687,
+            "datetime": "2025-04-28T00:05:00.000+02:00"
+          },
+          {
+            "value": 23551,
+            "percentage": 0.3344409889376447,
+            "datetime": "2025-04-28T00:10:00.000+02:00"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Scheduled",
+      "id": "2053",
+      "groupId": null,
+      "attributes": {
+        "title": "Scheduled",
+        "description": "Scheduled demand",
+        "color": "#e90b0b",
+        "icon": null,
+        "type": null,
+        "magnitude": null,
+        "composite": false,
+        "last-update": "2025-12-02T12:13:03.000+01:00",
+        "values": [
+          {
+            "value": 23248,
+            "percentage": 0.32809743568031385,
+            "datetime": "2025-04-28T00:00:00.000+02:00"
+          },
+          {
+            "value": 23248,
+            "percentage": 0.3293944288588512,
+            "datetime": "2025-04-28T00:05:00.000+02:00"
+          },
+          {
+            "value": 23248,
+            "percentage": 0.3301381729362814,
+            "datetime": "2025-04-28T00:10:00.000+02:00"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Real",
+      "id": "2037",
+      "groupId": null,
+      "attributes": {
+        "title": "Real",
+        "description": "Real demand",
+        "color": "#ffea00",
+        "icon": null,
+        "type": null,
+        "magnitude": null,
+        "composite": false,
+        "last-update": "2025-12-02T12:12:54.000+01:00",
+        "values": [
+          {
+            "value": 23921,
+            "percentage": 0.33759543870048125,
+            "datetime": "2025-04-28T00:00:00.000+02:00"
+          },
+          {
+            "value": 23694,
+            "percentage": 0.3357136784833801,
+            "datetime": "2025-04-28T00:05:00.000+02:00"
+          },
+          {
+            "value": 23620,
+            "percentage": 0.33542083812607393,
+            "datetime": "2025-04-28T00:10:00.000+02:00"
+          }
+        ]
+      }
+    }
+  ]
+}
