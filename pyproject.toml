@@ -31,6 +31,9 @@ dev = [
     "sqlfluff==4.4.0",
 ]
 
+[project.scripts]
+grid-platform = "grid_platform.cli:main"
+
 [tool.setuptools.packages.find]
 where = ["src"]
 
